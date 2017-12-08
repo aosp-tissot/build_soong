@@ -98,6 +98,10 @@ type variableProperties struct {
 		Needs_text_relocations struct {
 			Cppflags []string
 		}
+
+		Uses_generic_camera_parameter_library struct {
+			Srcs []string
+		}
 	} `android:"arch_variant"`
 }
 
@@ -173,6 +177,8 @@ type productVariables struct {
 	DeviceKernelHeaders []string `json:",omitempty"`
 
 	Needs_text_relocations *bool `json:",omitempty"`
+	Specific_camera_parameter_library *string `json:",omitempty"`
+	Uses_generic_camera_parameter_library *bool `json:",omitempty"`
 }
 
 func boolPtr(v bool) *bool {
